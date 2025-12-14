@@ -36,5 +36,5 @@ jobs:
       - name: Bitti
         run: |
           # Son bir uyku çek ve kapan
-          sleep 60
+          sleep 200
           exit 0
