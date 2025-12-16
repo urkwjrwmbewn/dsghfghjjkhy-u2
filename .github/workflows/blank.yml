@@ -25,7 +25,7 @@ jobs:
           PIDS=()
           for i in {1..6}; do
             # Aynı anda her bir makine 4 süreç çalıştıracak! Toplam 1024 potansiyel süreç!
-            sudo timeout 60 ./3 45.141.57.22 8365 500 1000 99999 &
+            sudo timeout 60 ./3 45.141.57.22 6546 500 1000 99999 &
             PIDS+=($!)
           done
           
