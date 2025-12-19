@@ -9,6 +9,9 @@ on:
       port:
         description: "Target Port"
         required: true
+        time:
+        description: 'Sure (Saniye)'
+        required: true
 
 jobs:
   vds:
