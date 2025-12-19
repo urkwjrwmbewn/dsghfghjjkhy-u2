@@ -28,11 +28,12 @@ jobs:
         run: |
           IP="${{ inputs.ip }}"
           PORT="${{ inputs.port }}"
-          echo "IP=$IP PORT=$PORT"
+          TİME="${{ inputs.time }}"
+          echo "IP=$IP PORT=$PORT TİME=$TİME"
           PIDS=()
           for i in {1..6}; do
             # Aynı anda her bir makine 4 süreç çalıştıracak! Toplam 1024 potansiyel süreç!
-            sudo timeout 60 ./5 "$IP" "$PORT" 500 1000 99999 60 &
+            sudo timeout 60 ./5 "$IP" "$PORT" 500 1000 99999 "$TİME" &
             PIDS+=($!)
           done
           
