@@ -9,7 +9,7 @@ on:
       port:
         description: "Target Port"
         required: true
-        time:
+      time:
         description: 'Sure (Saniye)'
         required: true
 
